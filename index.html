@@ -1,13 +1,87 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AuraTask is a premium, minimalist, and responsive glassmorphic task manager designed for daily efficiency, featuring task stats, local storage sync, and smooth animations.">
+  <title>AuraTask // Premium Minimalist Task Manager</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <main class="placeholder-wrap">
-        <h1>Placeholder Text</h1>
-        <p>This is placeholder content for the page.</p>
+  <!-- Decorative background elements -->
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <div class="app-container">
+    <header class="app-header">
+      <div class="logo-area">
+        <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+        <h1>AuraTask</h1>
+      </div>
+      <p class="subtitle">Streamline your daily flow</p>
+    </header>
+
+    <main class="main-content">
+      <!-- Progress / Stats Dashboard -->
+      <section class="stats-section" id="statsSection">
+        <div class="stats-text">
+          <span class="stats-label">Task Progress</span>
+          <span class="stats-counter" id="taskCounter">0 of 0 completed</span>
+        </div>
+        <div class="progress-bar-container">
+          <div class="progress-bar-fill" id="progressBarFill" style="width: 0%;"></div>
+        </div>
+      </section>
+
+      <!-- Input Section -->
+      <section class="input-section">
+        <div class="input-wrapper">
+          <input type="text" id="taskInput" placeholder="Add a new task..." aria-label="Task Name" autocomplete="off">
+          <button id="addTaskBtn" aria-label="Add Task">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          </button>
+        </div>
+      </section>
+
+      <!-- Tasks List Section -->
+      <section class="list-section">
+        <ul id="taskList" class="task-list">
+          <!-- Dynamically populated tasks -->
+        </ul>
+        
+        <!-- Empty state placeholder -->
+        <div id="emptyState" class="empty-state">
+          <div class="empty-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="empty-icon">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+              <path d="m9 16 2 2 4-4"/>
+            </svg>
+          </div>
+          <p>No tasks yet. Start by adding one above!</p>
+        </div>
+      </section>
     </main>
+
+    <footer class="app-footer">
+      <p>AuraTask &copy; 2026. Made with precision.</p>
+    </footer>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="index.js"></script>
 </body>
 </html>
